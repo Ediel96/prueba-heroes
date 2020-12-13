@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl :'https://akabab.github.io/superhero-api/api/all.json'
+  apiUrl :'https://akabab.github.io/superhero-api/api'
 };
 
 /*

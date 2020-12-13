@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {HeroesService} from '../services/heroes.service'
-import {pipe, of} from 'rxjs'
-import {filter, map} from 'rxjs/operators'
+import {HeroesService} from '../services/heroes.service';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
+
 export class HeroesComponent implements OnInit {
 
-  heroes ;
+  heroes: any;
 
   constructor(private heroeServ: HeroesService) {
   

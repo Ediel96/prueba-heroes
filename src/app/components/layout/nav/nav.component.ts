@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { filter } from 'rxjs/operators';
+import { HeroesService } from '../../services/heroes.service'
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private heroeServ: HeroesService) { }
+
+  heroes;
 
   ngOnInit(): void {
   }
 
+  buscarHeroe(termino : string){
+    // termino = termino.toLowerCase();
+
+    console.log(termino)
+
+    this.heroeServ.getHeroe().subscribe(
+      res => {
+        this.heroes = res,
+        this.heroes = this.heroes.map(res => 
+            filter(res => res['name'] === termino 
+            ))
+        , console.log(this.heroes)
+      }
+    )
+  }
 }

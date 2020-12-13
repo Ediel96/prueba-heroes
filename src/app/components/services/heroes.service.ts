@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import {environment} from '../../../environments/environment';
 import { HttpClient,  HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { of , pipe} from 'rxjs';
-    
-import { filter, map,  } from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +14,14 @@ export class HeroesService {
 
 
    getHeroe(){
-    return this.httpAuth.get(this.apiUrl).pipe(
+    return this.httpAuth.get(this.apiUrl+`/all.json`).pipe(
       map(res => res )
+    );    
+  }
+
+  getHeroeId(id: number){
+    return this.httpAuth.get(`${this.apiUrl}/id/${id}.json`).pipe(
+      map(res => res)
     );
-
-
   }
 }

@@ -5,7 +5,7 @@ import {HeroesComponent} from './components/heroes/heroes.component';
 const APP_ROUTES: Routes =[
   { path: '', component:  HeroesComponent},
   { path: 'heroes', component:  HeroesComponent},
-  { path: 'heroe', component:  HeroeComponent},
+  { path: 'heroe/:id', component:  HeroeComponent},
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash:false});
