@@ -24,9 +24,7 @@ export class NavComponent implements OnInit {
     this.heroeServ.getHeroe().subscribe(
       res => {
         this.heroes = res,
-        this.heroes = this.heroes.map(res => 
-            filter(res => res['name'] === termino 
-            ))
+        this.heroes = this.heroes.filter(res => res['name'] == termino.indexOf)
         , console.log(this.heroes)
       }
     )

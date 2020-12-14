@@ -7,13 +7,13 @@ import {HeroesService} from '../services/heroes.service';
 })
 
 export class HeroesComponent implements OnInit {
+  
+  constructor(private heroeServ: HeroesService) {  
+  }
 
   heroes: any;
+  filterPost = '';
 
-  constructor(private heroeServ: HeroesService) {
-  
-  }
-  
   ngOnInit(): void {
       this.heroeServ.getHeroe().subscribe(
         res => {

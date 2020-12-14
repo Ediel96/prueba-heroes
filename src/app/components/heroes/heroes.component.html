@@ -1,9 +1,16 @@
 <app-nav></app-nav>
 <br>
 <div class="container">
+
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" name="filterPost" placeholder="Search..." [(ngModel)]="filterPost">
+    </div>
+  </div>
+
   <div class="card-columns">
-    <div class="card" *ngFor="let heroe of heroes">
-      <img class="card-img-top" src="{{heroe.images.lg}}" alt="Card image cap">
+    <div class="card" *ngFor="let heroe of heroes | filter:filterPost">
+      <img class="card-img-top" src="{{heroe.images.sm}}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{heroe.name}}</h5>
         <p class="card-text">{{heroe.connections.groupAffiliation}}</p>
